@@ -1,4 +1,4 @@
-# Linear-Algebra
+# Linear Algebra
 A big matrix class written in C++.
 
 
