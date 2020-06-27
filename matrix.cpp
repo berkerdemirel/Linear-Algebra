@@ -1,9 +1,5 @@
 #include "matrix.h"
-#include <cassert>
-#include <algorithm>
-#include <cmath>
-#include <iomanip>
-#include <array>
+
 
 Matrix::Matrix() {
 	rows = 0;
