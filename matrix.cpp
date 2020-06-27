@@ -601,7 +601,7 @@ void jacobi(double alpha, double beta, double gamma, Matrix & G, double & t) { /
 	s = t;
 }
 
-void Matrix::assignCol(Matrix & mat, int col) { // assigns mat to colth column of the object
+void Matrix::assignCol(Matrix mat, int col) { // assigns mat to colth column of the object
 	if (mat.getCols() != 1) {
 		cout << "Warning, mat is not a column vector" << endl;
 	}
@@ -610,7 +610,7 @@ void Matrix::assignCol(Matrix & mat, int col) { // assigns mat to colth column o
 	}
 }
 
-void Matrix::assignRow(Matrix & mat, int row) { // assigns mat to rowth row of the object
+void Matrix::assignRow(Matrix mat, int row) { // assigns mat to rowth row of the object
 	if (mat.getRows() != 1) {
 		cout << "Warning, mat is not a row vector" << endl;
 	}
@@ -762,7 +762,7 @@ Matrix eye(int n) { // returns an identity matrix with nxn
 }
 
 
-Matrix concatCols(Matrix & a, Matrix & b) { // concatenates columns
+Matrix concatCols(Matrix a, Matrix b) { // concatenates columns
 	assert(a.getRows() == b.getRows());
 	Matrix temp(a.getRows(), a.getCols() + b.getCols());
 	for (int i = 0; i < a.getRows(); i++) {
@@ -776,7 +776,7 @@ Matrix concatCols(Matrix & a, Matrix & b) { // concatenates columns
 	return temp;
 }
 
-Matrix concatRows(Matrix & a, Matrix & b) { // concatenates rows (appends)
+Matrix concatRows(Matrix a, Matrix b) { // concatenates rows (appends)
 	assert(a.getCols() == b.getCols());
 	Matrix temp(a.getRows() + b.getRows(), a.getCols());
 	for (int i = 0; i < a.getRows(); i++) {
@@ -800,8 +800,8 @@ Matrix ones(int n) { // returns a nxn matrix with 1s
 	return Matrix(n, n, 1);
 }
 
-double max(Matrix & m) {
-	double d = DBL_MIN;
+double max(Matrix m) {
+	double d = INT8_MIN;
 	for (int i = 0; i < m.getRows(); i++) {
 		for (int j = 0; j < m.getCols(); j++) {
 			if (d < m[i][j]) {

@@ -9,6 +9,7 @@
 #include <cmath>
 #include <iomanip>
 #include <array>
+#include <climits>
 
 using namespace std;
 
@@ -69,8 +70,8 @@ public:
 	Matrix clipCols(int start, int end, bool self = false);
 	Matrix clipRows(int start, int end, bool self = false);
 	double frobeniusNorm();
-	void assignCol(Matrix & m, int col);
-	void assignRow(Matrix & mat, int row);
+	void assignCol(Matrix m, int col);
+	void assignRow(Matrix mat, int row);
 	void trimMatrix();
 	void printMatrix();
 	Matrix apply(double(*function)(double));
@@ -91,11 +92,11 @@ public:
 Matrix eye(int n);
 Matrix zeros(int n);
 Matrix ones(int n);
-Matrix concatCols(Matrix & a, Matrix & b);
-Matrix concatRows(Matrix & a, Matrix & b);
+Matrix concatCols(Matrix a, Matrix b);
+Matrix concatRows(Matrix a, Matrix b);
 Matrix diag(Matrix & s);
 Matrix diag(vector<double> & s);
 vector<vector<double>> matrixtoVector(Matrix & m);
-double max(Matrix & m);
+double max(Matrix m);
 
 # endif
