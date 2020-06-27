@@ -1,5 +1,4 @@
 #include <iostream>
-#include <array>
 #include "matrix.h"
 
 using namespace std;
