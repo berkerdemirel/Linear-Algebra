@@ -551,7 +551,7 @@ double Matrix::frobeniusNorm() { // computes the Frobenius norm of the matrix
 
 Matrix Matrix::clipRows(int start, int end, bool self) { // returns the rows between start, end M[start:end]
 	assert(start < rows && end < rows);
-	Matrix temp(end-start, cols);
+	Matrix temp(end-start+1, cols);
 	for (int i = start; i <= end; i++) { // end included
 		for (int j = 0; j < cols; j++) {
 			temp[i-start][j] = m[i][j];
@@ -566,7 +566,7 @@ Matrix Matrix::clipRows(int start, int end, bool self) { // returns the rows bet
 
 Matrix Matrix::clipCols(int start, int end, bool self) { // returns the columns between start, end M[start:end]
 	assert(start < cols && end < cols);
-	Matrix temp(rows, end - start);
+	Matrix temp(rows, end - start + 1);
 	for (int i = 0; i < rows; i++) {
 		for (int j = start; j <= end; j++) { // end included
 			temp[i][j - start] = m[i][j];
