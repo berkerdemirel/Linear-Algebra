@@ -32,8 +32,8 @@ public:
 	// getters
 	int getRows()const { return rows; };
 	int getCols()const { return cols; };
-	double* return_col(int i);
-	double* return_row(int i);
+	double* return_col(int i)const;
+	double* return_row(int i)const;
 	
 	// operators
 	Matrix operator+(const Matrix & rhs)const;
@@ -54,8 +54,8 @@ public:
 	void operator+=(const Matrix & rhs);
 	void operator-=(const Matrix & rhs);
 
-	bool operator==(const Matrix & rhs);
-	bool operator!=(const Matrix & rhs);
+	bool operator==(const Matrix & rhs)const;
+	bool operator!=(const Matrix & rhs)const;
 	
 	const Matrix & operator=(const Matrix & rhs);
 	double* operator[](int i)const { return m[i]; }
@@ -73,7 +73,7 @@ public:
 	void assignCol(Matrix m, int col);
 	void assignRow(Matrix mat, int row);
 	void trimMatrix();
-	void printMatrix();
+	void printMatrix()const;
 	Matrix apply(double(*function)(double));
 
 	// matrix functions

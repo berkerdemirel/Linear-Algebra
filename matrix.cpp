@@ -104,7 +104,7 @@ Matrix::~Matrix() {
 	clearMatrix();
 }
 
-double* Matrix::return_col(int c) { // returns cth col
+double* Matrix::return_col(int c)const { // returns cth col
 	assert(c < cols);
 	double * res = new double[rows];
 	for (int i = 0; i < rows; i++) {
@@ -113,7 +113,7 @@ double* Matrix::return_col(int c) { // returns cth col
 	return res;
 }
 
-double* Matrix::return_row(int c) { // returns cth row
+double* Matrix::return_row(int c)const { // returns cth row
 	assert(c < rows);
 	double * res = new double[cols];
 	for (int i = 0; i < cols; i++) {
@@ -158,7 +158,7 @@ Matrix Matrix::operator*(const Matrix & rhs)const { // matrix multiplication mxn
 	return res;
 }
 
-void Matrix::printMatrix() { // print matrix with 2 floating point precision
+void Matrix::printMatrix()const { // print matrix with 2 floating point precision
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
 			cout << setprecision(2) << m[i][j] << "\t";
@@ -225,7 +225,7 @@ Matrix Matrix::operator/(double rhs)const { // divide each element of matrix by 
 	return temp;
 }
 
-bool Matrix::operator==(const Matrix & rhs) { // checks if two matrices are same
+bool Matrix::operator==(const Matrix & rhs)const { // checks if two matrices are same
 	assert(rows == rhs.getRows() && cols == rhs.getCols());
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
@@ -237,7 +237,7 @@ bool Matrix::operator==(const Matrix & rhs) { // checks if two matrices are same
 	return true;
 }
 
-bool Matrix::operator!=(const Matrix & rhs) { // checks if two matrices are different
+bool Matrix::operator!=(const Matrix & rhs)const { // checks if two matrices are different
 	return !(*this == rhs);
 }
 
