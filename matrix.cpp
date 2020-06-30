@@ -169,12 +169,14 @@ void Matrix::printMatrix()const { // print matrix with 2 floating point precisio
 
 
 const Matrix & Matrix::operator=(const Matrix & rhs) { // assignment operator
-	clearMatrix();
-	rows = rhs.getRows();
-	cols = rhs.getCols();
-	m = new double*[rows];
-	for (int i = 0; i<rows; i++) {
-		m[i] = new double[cols];
+	if (!(rows == rhs.getRows() && cols == rhs.getCols())) {
+		clearMatrix();
+		rows = rhs.getRows();
+		cols = rhs.getCols();
+		m = new double*[rows];
+		for (int i = 0; i<rows; i++) {
+			m[i] = new double[cols];
+		}
 	}
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
