@@ -668,10 +668,13 @@ array<Matrix, 3> Matrix::singular_value_decomposition() { // returns U,E,VT wher
 		for (int j = 0; j < ind.size(); j++) {
 			sigma[0][j] = ind[j].second;
 			U[i][j] = copy_A[i][ind[j].first];
+		}
+	}
+	for (int i = 0; i < copy_V.getRows(); i++) {
+		for (int j = 0; j < ind.size(); j++) {
 			V[i][j] = copy_V[i][ind[j].first];
 		}
 	}
-
 	// find eigenvalues
 	for (int k = 0; k < cols; k++) {
 		if (sigma[0][k] == 0) {
