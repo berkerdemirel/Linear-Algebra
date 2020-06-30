@@ -354,7 +354,7 @@ Matrix Matrix::gaussianElimination(bool self) { // performs gaussian elimination
 	Matrix temp(*this);
 	int h = 0, k = 0; // pivot row and column
 	double * col;
-	while (h < rows & k < cols) {
+	while (h < rows && k < cols) {
 		col = temp.return_col(k); // kth column
 		double max=0;
 		int index = argmax(col, max, rows);
