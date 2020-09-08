@@ -3,7 +3,6 @@
 
 using namespace std;
 
-// berker demirel
 
 int main() {
 
